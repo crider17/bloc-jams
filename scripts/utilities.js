@@ -12,6 +12,10 @@ var forEach = function(numOfNodes, callback) {
 
 }
 
+<<<<<<< HEAD
+=======
+//Call back funtion
+>>>>>>> checkpoint-9-events
 function alertAll(point) {
   alert("Selling point #" + point + " is a great selling point!");
 }
