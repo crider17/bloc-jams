@@ -1,3 +1,5 @@
+//document.getElementsByClassName('album-cover-art').addEventListener("click", toggleAlbum);
+
 // Example Album
 var albumPicasso = {
     title: 'The Colors',
@@ -30,6 +32,22 @@ var albumMarconi = {
     ]
 };
 
+// Another Example Album
+var albumPasteur = {
+    title: 'Germ Theory',
+    artist: 'Louis Pasteur',
+    label: 'Bio Records',
+    year: '1887',
+    albumArtUrl: 'assets/images/album_covers/14.png',
+    songs: [
+        { title: 'I have the cure', duration: '1:51' },
+        { title: 'Its crystal clear', duration: '3:01' },
+        { title: 'What spontaneous generation?', duration: '1:21'},
+        { title: 'Pasteurization nation', duration: '2:14' },
+        { title: 'Gimme the vaccine!', duration: '4:15'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -44,6 +62,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
  var setCurrentAlbum = function(album) {
      // #1
+     //alert(album);
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
@@ -67,4 +86,15 @@ var createSongRow = function(songNumber, songName, songLength) {
 
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+//  var clicked = document.getElementsByClassName('album-cover-art');
+//    clicked.addEventListener("click", function(){ alert("here!"); });
+  document.getElementsByClassName('album-cover-art').addEventListener('click', function(){ alert("here!"); });
+  //document.getElementsByClassName('album-cover-art').addEventListener("wheel", alert("herenow!"));
  };
+
+// var toggleAlbum = function() {
+//   alert("here!");
+// };
+
+ //var clicked = document.getElementsByClassName('album-cover-art');
+ //clicked.addEventListener("click", toggleAlbum);
