@@ -96,5 +96,5 @@ var createSongRow = function(songNumber, songName, songLength) {
 //   alert("here!");
 // };
 
- //var clicked = document.getElementsByClassName('album-cover-art');
- //clicked.addEventListener("click", toggleAlbum);
+ // var clicked = document.getElementsByClassName('album-cover-art');
+ // clicked.addEventListener("click", toggleAlbum);
