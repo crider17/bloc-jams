@@ -2,6 +2,7 @@
 
 var pointsArray = document.getElementsByClassName('point');
 
+//Getting my loop counter
 var numOfNodes = pointsArray.length;
 
 var forEach = function(numOfNodes, callback) {
