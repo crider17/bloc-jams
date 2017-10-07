@@ -2,6 +2,7 @@
 
 var pointsArray = document.getElementsByClassName('point');
 
+//Getting my loop counter
 var numOfNodes = pointsArray.length;
 
 var forEach = function(numOfNodes, callback) {
@@ -12,6 +13,7 @@ var forEach = function(numOfNodes, callback) {
 
 }
 
+//Call back funtion
 function alertAll(point) {
   alert("Selling point #" + point + " is a great selling point!");
 }

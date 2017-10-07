@@ -1,15 +1,19 @@
-//  alert("Leaving here for testing purposes");
+//  alert("Here!");
 
-var pointsArray = document.getElementsByClassName('point');
+var getPoints = document.getElementsByClassName('point');
+
+var pointsArray = Array.from(getPoints);
 
 var animatePoints = function(points) {
 
-  [].forEach.call(points, function(el) {
-    el.style.opacity = 1;
-    el.transform = "scaleX(1) translateY(0)";
-    el.msTransform = "scaleX(1) translateY(0)";
-    el.WebkitTransform = "scaleX(1) translateY(0)";
-  });
+  var revealPoint = function(point) {
+   point.style.opacity = 1;
+   point.style.transform = "scaleX(1) translateY(0)";
+   point.style.msTransform = "scaleX(1) translateY(0)";
+   point.style.WebkitTransform = "scaleX(1) translateY(0)";
+  }
+
+  points.forEach(revealPoint);
 
 };
 
@@ -24,4 +28,5 @@ window.onload = function() {
         animatePoints(pointsArray);
     }
 });
+
 }
