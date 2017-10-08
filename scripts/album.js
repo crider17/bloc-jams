@@ -1,4 +1,3 @@
-//document.getElementsByClassName('album-cover-art').addEventListener("click", toggleAlbum);
 
 // Example Album
 var albumPicasso = {
@@ -84,17 +83,25 @@ var createSongRow = function(songNumber, songName, songLength) {
      }
  };
 
- window.onload = function() {
-     setCurrentAlbum(albumPicasso);
-//  var clicked = document.getElementsByClassName('album-cover-art');
-//    clicked.addEventListener("click", function(){ alert("here!"); });
-  document.getElementsByClassName('album-cover-art').addEventListener('click', function(){ alert("here!"); });
-  //document.getElementsByClassName('album-cover-art').addEventListener("wheel", alert("herenow!"));
- };
+window.onload = function() {
+  currentAlbum = albumPicasso;
+  setCurrentAlbum(currentAlbum);
+  //Asign listener to album cover
+  document.getElementsByClassName('album-cover-art')[0].addEventListener('click', toggleAlbum);
+};
 
-// var toggleAlbum = function() {
-//   alert("here!");
-// };
-
- // var clicked = document.getElementsByClassName('album-cover-art');
- // clicked.addEventListener("click", toggleAlbum);
+// Function to toggle through albums when the cover is clicked.
+var toggleAlbum = function() {
+  switch(currentAlbum) {
+    case albumPicasso:
+      currentAlbum = albumMarconi;
+      break;
+    case albumMarconi:
+      currentAlbum = albumPasteur;
+      break;
+    case albumPasteur:
+      currentAlbum = albumPicasso;
+      break;
+  }
+  setCurrentAlbum(currentAlbum);
+};
