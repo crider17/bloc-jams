@@ -108,8 +108,9 @@ var createSongRow = function(songNumber, songName, songLength) {
      var lastSongNumber = currentlyPlayingSongNumber;
 
      // Set a new current song
-     currentlyPlayingSongNumber = currentSongIndex + 1;
-     currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
+     //currentlyPlayingSongNumber = currentSongIndex + 1;
+     //currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
+     setSong(currentSongIndex +1)
 
      // Update the Player Bar information
      updatePlayerBarSong();
@@ -134,8 +135,9 @@ var createSongRow = function(songNumber, songName, songLength) {
     var lastSongNumber = currentlyPlayingSongNumber;
 
     // Set a new current song
-    currentlyPlayingSongNumber = currentSongIndex + 1;
-    currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
+    //currentlyPlayingSongNumber = currentSongIndex + 1;
+    //currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
+    setSong(currentSongIndex +1)
 
     // Update the Player Bar information
     updatePlayerBarSong();
