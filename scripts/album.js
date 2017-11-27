@@ -1,4 +1,3 @@
-
 var setSong = function(songNumber) {
   if (currentSoundFile) {
     currentSoundFile.stop();
@@ -25,14 +24,12 @@ var setVolume = function(volume) {
     }
 };
 
-var setCurrentTimeInPlayerBar = function(currentTime) {
+var setCurrentTimeInPlayerBar = function(currentTime) { //set current song time in player bar
   $('.current-time').text(filterTimeCode(currentTime));
 };
 
-var setTotalTimeInPlayerBar = function() {
-  currentSoundFile.bind('timeupdate', function(event) {
-      $('.total-time').text(filterTimeCode(this.getDuration()));
-  });
+var setTotalTimeInPlayerBar = function(totalTime) { //set total song time in player bar
+  $('.total-time').text(filterTimeCode(totalTime));
 };
 
 var filterTimeCode = function(timeInSeconds) { //function to convert SS into MM:SS
@@ -135,7 +132,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
  var updateSeekBarWhileSongPlays = function() {
      if (currentSoundFile) {
-         currentSoundFile.bind('timeupdate', function(event) {
+         currentSoundFile.bind('timeupdate', function(event) { //using .bind timeupdate for continuous updates to bar
              var seekBarFillRatio = this.getTime() / this.getDuration();
              var $seekBar = $('.seek-control .seek-bar');
 
@@ -281,7 +278,10 @@ if (currentSoundFile.isPaused()) {
 
      $('.main-controls .play-pause').html(playerBarPauseButton);
 
-     setTotalTimeInPlayerBar();
+     currentSoundFile.bindOnce('loadedmetadata', function(event) { //using bindOnce and 'loadedmetadata' to update player bar only one time per now song
+        var totalTime = this.getDuration();
+        setTotalTimeInPlayerBar(totalTime);
+     });
 
  };
 
